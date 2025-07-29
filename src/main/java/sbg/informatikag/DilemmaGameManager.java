@@ -31,8 +31,8 @@ public class DilemmaGameManager {
                         continue; // Skip match if bot plays against itself and skipSameBotMatches is enabled.
                     }
                     if (matchDatas.isEmpty()) {
-                        this.matchDatas.add(this.playMatch(new MatchData(Move.NoMoveBecauseOfFirstMatch,
-                                Move.NoMoveBecauseOfFirstMatch, bot1, bot2), bot1, bot2));
+                        this.matchDatas.add(this.playMatch(new MatchData(null,
+                                null, bot1, bot2), bot1, bot2));
                     } else {
                         this.matchDatas.add(this.playMatch(this.matchDatas.get(matchIndex - 1), bot1, bot2));
                     }
