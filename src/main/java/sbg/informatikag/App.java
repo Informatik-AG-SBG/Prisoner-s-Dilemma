@@ -3,6 +3,7 @@ package sbg.informatikag;
 import sbg.informatikag.bots.AlwaysCooperatesBot;
 import sbg.informatikag.bots.AlwaysDefectsBot;
 import sbg.informatikag.bots.RandomBot;
+import sbg.informatikag.bots.TitForTatBot;
 
 /**
  * Hello world!
@@ -13,6 +14,7 @@ public class App {
         gameManager.botRegistration.registerBot(new AlwaysCooperatesBot());
         gameManager.botRegistration.registerBot(new AlwaysDefectsBot());
         gameManager.botRegistration.registerBot(new RandomBot());
+        gameManager.botRegistration.registerBot(new TitForTatBot());
 
         gameManager.playGame(true, 100);
 
