@@ -1,0 +1,27 @@
+package sbg.informatikag;
+
+import java.util.ArrayList;
+
+public class DilemmaGameManager {
+    ArrayList<Bot> bots = new ArrayList<Bot>();
+
+    public void registerBot(Bot bot) {
+        this.bots.add(bot);
+    }
+
+    public MatchData playMatch(MatchData matchDataLastRound, Bot bot1, Bot bot2) {
+        return new MatchData(bot1.move(matchDataLastRound.moveBot1, matchDataLastRound.moveBot2), bot2.move(matchDataLastRound.moveBot2, matchDataLastRound.moveBot1));
+    }
+
+    public void playGame(boolean skipSameBotMatches) {
+        for (Bot bot1 : bots) {
+            for (Bot bot2: bots) {
+                if (bot1.equals(bot2) && skipSameBotMatches) {
+                    continue;   //Skip match if bot plays against itself and skipSameBotMatches is enabled.
+                }
+                Move move =
+            }
+        }
+    }
+
+}
