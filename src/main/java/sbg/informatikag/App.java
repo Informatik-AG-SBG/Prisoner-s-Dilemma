@@ -16,7 +16,7 @@ public class App {
         gameManager.botRegistration.registerBot(new RandomBot());
         gameManager.botRegistration.registerBot(new TitForTatBot());
 
-        gameManager.playGame(true, 100);
+        gameManager.playGame(false, 100);
 
         MatchData lastData = null;
         int currentBotScore = 0;
@@ -25,6 +25,7 @@ public class App {
                 if (!data.bot1.equals(lastData.bot1)) {
                     System.out.printf("%s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
                             lastData.bot2.getName());
+                    System.out.println();
                     currentBotScore = 0;
                 } else if (!data.bot2.equals(lastData.bot2)) {
                     System.out.printf("%s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
