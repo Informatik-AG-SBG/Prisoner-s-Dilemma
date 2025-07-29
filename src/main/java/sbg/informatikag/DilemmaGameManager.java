@@ -25,8 +25,8 @@ public class DilemmaGameManager {
         matchDatas.clear();
         int matchIndex = 0;
         for (Bot bot1 : this.botRegistration.bots) {
-            for (int i = 0; i < matchRepetitions; i++) {
                 for (Bot bot2 : this.botRegistration.bots) {
+                    for (int i = 0; i < matchRepetitions; i++) {
                     if (bot1.equals(bot2) && skipSameBotMatches) {
                         continue; // Skip match if bot plays against itself and skipSameBotMatches is enabled.
                     }

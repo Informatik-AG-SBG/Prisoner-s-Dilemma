@@ -1,7 +1,8 @@
 package sbg.informatikag;
 
-import sbg.informatikag.bots.AlwaysCooperates;
-import sbg.informatikag.bots.AlwaysDefects;
+import sbg.informatikag.bots.AlwaysCooperatesBot;
+import sbg.informatikag.bots.AlwaysDefectsBot;
+import sbg.informatikag.bots.RandomBot;
 
 /**
  * Hello world!
@@ -9,10 +10,11 @@ import sbg.informatikag.bots.AlwaysDefects;
 public class App {
     public static void main(String[] args) {
         DilemmaGameManager gameManager = new DilemmaGameManager();
-        gameManager.botRegistration.registerBot(new AlwaysCooperates());
-        gameManager.botRegistration.registerBot(new AlwaysDefects());
+        gameManager.botRegistration.registerBot(new AlwaysCooperatesBot());
+        gameManager.botRegistration.registerBot(new AlwaysDefectsBot());
+        gameManager.botRegistration.registerBot(new RandomBot());
 
-        gameManager.playGame(true, 5);
+        gameManager.playGame(true, 100);
 
         MatchData lastData = null;
         int currentBotScore = 0;

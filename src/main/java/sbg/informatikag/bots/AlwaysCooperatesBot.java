@@ -3,7 +3,7 @@ package sbg.informatikag.bots;
 import sbg.informatikag.Bot;
 import sbg.informatikag.Move;
 
-public class AlwaysCooperates implements Bot {
+public class AlwaysCooperatesBot implements Bot {
 
     @Override
     public String getName() {
