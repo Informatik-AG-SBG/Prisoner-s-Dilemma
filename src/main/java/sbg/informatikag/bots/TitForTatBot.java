@@ -11,10 +11,10 @@ public class TitForTatBot implements Bot {
 
     @Override
     public Move move(Move myOwnMoveLastRound, Move othersMoveLastRound) {
+        if (othersMoveLastRound==null) {
+            return Move.Cooperation;
+        }
         switch (othersMoveLastRound) {
-            case Cooperation -> {
-                return Move.Cooperation;
-            }
             case Defection -> {
                 return Move.Defection;
             }

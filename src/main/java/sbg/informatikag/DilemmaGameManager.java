@@ -25,18 +25,20 @@ public class DilemmaGameManager {
         matchDatas.clear();
         int matchIndex = 0;
         for (Bot bot1 : this.botRegistration.bots) {
-                for (Bot bot2 : this.botRegistration.bots) {
-                    for (int i = 0; i < matchRepetitions; i++) {
+            for (Bot bot2 : this.botRegistration.bots) {
+                MatchData lastMove = null;
+                for (int i = 0; i < matchRepetitions; i++) {
                     if (bot1.equals(bot2) && skipSameBotMatches) {
                         continue; // Skip match if bot plays against itself and skipSameBotMatches is enabled.
                     }
-                    if (matchDatas.isEmpty()) {
-                        this.matchDatas.add(this.playMatch(new MatchData(null,
-                                null, bot1, bot2), bot1, bot2));
+                    if (lastMove == null) {
+                        lastMove = this.playMatch(new MatchData(Move.Cooperation,
+                                Move.Cooperation, bot1, bot2), bot1, bot2);
                     } else {
-                        this.matchDatas.add(this.playMatch(this.matchDatas.get(matchIndex - 1), bot1, bot2));
+                        lastMove = this.playMatch(this.matchDatas.get(matchIndex - 1), bot1, bot2);
                     }
                     matchIndex++;
+                    this.matchDatas.add(lastMove);
                 }
             }
         }

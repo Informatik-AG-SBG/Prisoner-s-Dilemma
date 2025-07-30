@@ -12,11 +12,10 @@ public class App {
     public static void main(String[] args) {
         DilemmaGameManager gameManager = new DilemmaGameManager();
         gameManager.botRegistration.registerBot(new AlwaysCooperatesBot());
-        gameManager.botRegistration.registerBot(new AlwaysDefectsBot());
         gameManager.botRegistration.registerBot(new RandomBot());
         gameManager.botRegistration.registerBot(new TitForTatBot());
 
-        gameManager.playGame(false, 100);
+        gameManager.playGame(true, 1);
 
         MatchData lastData = null;
         int currentBotScore = 0;
@@ -57,6 +56,7 @@ public class App {
                     break;
             }
 
+            System.out.printf("%s : %s, %s : %s \n", data.bot1.getName(), data.moveBot1, data.bot2.getName(), data.moveBot2);
             lastData = data;
         }
         System.out.printf("%s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
