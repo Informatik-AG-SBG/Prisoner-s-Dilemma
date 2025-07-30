@@ -22,12 +22,12 @@ public class App {
         for (MatchData data : gameManager.matchDatas) {
             if (!(lastData == null)) {
                 if (!data.bot1.equals(lastData.bot1)) {
-                    System.out.printf("%s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
+                    System.out.printf("Result: %s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
                             lastData.bot2.getName());
                     System.out.println();
                     currentBotScore = 0;
                 } else if (!data.bot2.equals(lastData.bot2)) {
-                    System.out.printf("%s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
+                    System.out.printf("Result: %s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
                             lastData.bot2.getName());
                     currentBotScore = 0;
                 }
@@ -56,10 +56,10 @@ public class App {
                     break;
             }
 
-            System.out.printf("%s : %s, %s : %s \n", data.bot1.getName(), data.moveBot1, data.bot2.getName(), data.moveBot2);
+            System.out.printf("Match: %s : %s, %s : %s \n", data.bot1.getName(), data.moveBot1, data.bot2.getName(), data.moveBot2);
             lastData = data;
         }
-        System.out.printf("%s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
+        System.out.printf("Result: %s has score of %s against %s \n", lastData.bot1.getName(), currentBotScore,
                 lastData.bot2.getName());
         currentBotScore = 0;
         /* Register all bots here */
